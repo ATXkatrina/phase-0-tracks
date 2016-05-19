@@ -10,12 +10,12 @@
   margin-left: 40%;
   margin-top: 13%;
   z-index: 2;
-  position: relative;
+  position: absolute;
 }
 .glasses{
   display: block;
   margin-left: 40%;
   margin-top: 0%;
   z-index: 3;
-  position: relative;
+  position: absolute;
 }
