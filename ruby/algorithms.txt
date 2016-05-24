@@ -1,0 +1,52 @@
+Pseudocode practice
+
+Robot using elevator
+
+locate the elevator
+go to the elevator
+locate the buttons
+if going up
+  press the up arrow button
+else if going down
+  press the down arrow button
+else (if only one button)
+  press the button
+when the doors open
+    if there are people also entering, allow them to enter first (a robot must know its place)
+    else go inside the elevator
+    stand clear of the doors
+locate the buttons
+  compare each button number with the number of the target floor
+  when found, press the button
+when doors open
+  allow any people also getting off to get off first
+  exit the elevator
+
+
+Taking out trash+recycling
+
+Note the day of the week
+  if Wednesday, then trash and recycling must be taken out for Thursday pickup
+  else if surrounding neighbors' have their bins out, assume it is wednesday
+Locate gate key
+Ensure dogs are inside
+Open back door
+  check that back door will not lock you out
+  close door
+Go to gate
+  unlock gate
+  open gate
+    ensure that gate does not scratch a car when opening
+  carefully put keys in pocket so you don't loose them
+Locate trash bin
+  know it is the trash bin because it is brown and smaller
+take the trash bin to the curb
+  ensure it doesn't knock a car on the way down the driveway
+Set trash bin facing the street to the side of the driveway
+Check if other neighbors' have put out recycling bin
+  or- if you know that recycling was not picked up last week,
+Return to recycling bin and repeat the process
+Return to gate and lock behind you
+Return to back door and enter
+Lock door behind you
+Return key to drawer
