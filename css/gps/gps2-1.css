@@ -1,22 +1,35 @@
 header {
  font-family: Times;
+ color: yellow;
   background-color:red;
 }
 
+iframe {
+  width: 480px;
+  display: block;
+  margin: 0 auto;
+  padding:25px;
+}
 .column-1 {
+  display:inline-block;
   font-family: Arial;
+  color: white;
   background-color:blue;
   float: left;
   width: 50%
 }
 
 .column-2 {
+  display:inline-block;
   font-family: Arial;
+  color: green;
   background-color:yellow;
   float: right;
   width: 50%;
 }
 footer {
+  clear: both;
   font-family: Times;
-  background-color: tomato;
+  color: blue;
+  background-color:tomato;
 }
