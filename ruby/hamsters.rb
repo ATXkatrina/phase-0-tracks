@@ -14,7 +14,7 @@ puts "Estimated age?"
 age=gets.chomp.to_i
 
 if age==0
-  age==nil
+  age=nil
 end
 
 
