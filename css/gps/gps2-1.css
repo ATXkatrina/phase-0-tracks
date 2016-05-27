@@ -1,0 +1,22 @@
+header {
+ font-family: Times;
+  background-color:red;
+}
+
+.column-1 {
+  font-family: Arial;
+  background-color:blue;
+  float: left;
+  width: 50%
+}
+
+.column-2 {
+  font-family: Arial;
+  background-color:yellow;
+  float: right;
+  width: 50%;
+}
+footer {
+  font-family: Times;
+  background-color: tomato;
+}
