@@ -1,27 +1,65 @@
-puts "Good afternoon. What is your name?"
-  name = gets.chomp
+puts "Good afternoon. How many applicants will be processed today?"
+  applicant_no = gets.chomp.to_i
 
-puts "Can you tell me your age?"
-  alleged_age = gets.chomp
+i = 0
+while i < applicant_no
 
-puts "And what year were you born in?"
-  birth_year = gets.chomp
+    puts "Good afternoon. What is your name?"
+      name = gets.chomp
 
-puts "You like garlic bread, right? (yes/no)"
-  garlic_ok = gets.chomp
+    puts "Can you tell me your age?"
+      alleged_age = gets.chomp.to_i
 
-puts "Would you be enrolling in the health plan?(yes/no)"
-  health = gets.chomp
+    puts "And what year were you born in?"
+      birth_year = gets.chomp.to_i
 
-# check age
-    current_year = 2016
-    birth_year = 1987
-    real_age = current_year -  birth_year
+    puts "You like garlic bread, right? (yes/no)"
+      garlic_ok = gets.chomp
 
-    # if real_age == alleged_age
+    puts "Would you be enrolling in the health plan?(yes/no)"
+      if gets.chomp == "yes"
+        insurance = true
+      else
+        insurance = false
+      end
 
-if real_age == alleged_age
-  is_vampire = true
+allergy = ''
+until allergy == ("sunshine" || "done")
+  puts "And, do you have any allergies? If no allergies to enter, type 'done'"
+  allergy = gets.chomp
+  if
+    allergy == "sunshine"
+    puts "Probably a vampire!"
+  elsif
+    allergy == "done"
+    break
+  end
 end
 
-puts is_vampire
+current_year = 20
+if birth_year == current_year - alleged_age
+  age_checks_out = true
+else
+  age_checks_out = false
+end
+
+
+    if (age_checks_out && garlic_ok) || insurance
+      result = "Probably not a vampire"
+    elsif !(age_checks_out && garlic_ok) || !insurance
+      result = "Run! It's a vampire!"
+    elsif  !age_checks_out && !garlic_ok && !insurance
+      result = "Almost certainly a vampire"
+    elsif name == "Lestat" || "Edward Cullen" || "Drake Cula" || "Dracula" || "Tu Fang"
+      result = "Definitely a vampire"
+    else
+      result = "Results inconclusive"
+    end
+
+  i += 1
+
+    puts "Applicant no.#{i}, #{name} came through with a result of: #{result}"
+
+end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
