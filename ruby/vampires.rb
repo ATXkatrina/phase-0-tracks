@@ -13,6 +13,13 @@ while i < applicant_no
     puts "And what year were you born in?"
       birth_year = gets.chomp.to_i
 
+      current_year = 20
+      if birth_year == current_year - alleged_age
+        age_checks_out = true
+      else
+        age_checks_out = false
+      end
+
     puts "You like garlic bread, right? (yes/no)"
       garlic_ok = gets.chomp
 
@@ -23,26 +30,19 @@ while i < applicant_no
         insurance = false
       end
 
-allergy = ''
-until allergy == ("sunshine" || "done")
-  puts "And, do you have any allergies? If no allergies to enter, type 'done'"
-  allergy = gets.chomp
-  if
-    allergy == "sunshine"
-    puts "Probably a vampire!"
-  elsif
-    allergy == "done"
-    break
-  end
-end
-
-current_year = 20
-if birth_year == current_year - alleged_age
-  age_checks_out = true
-else
-  age_checks_out = false
-end
-
+    allergy = ''
+    until allergy == ("sunshine" || "done")
+      puts "And, do you have any allergies? If no allergies to enter, type 'done'"
+      allergy = gets.chomp
+      if
+        allergy == "sunshine"
+        result = "Probably a vampire!"
+        puts result
+      elsif
+        allergy == "done"
+        break
+      end
+    end
 
     if (age_checks_out && garlic_ok) || insurance
       result = "Probably not a vampire"
@@ -56,9 +56,9 @@ end
       result = "Results inconclusive"
     end
 
-  i += 1
-
     puts "Applicant no.#{i}, #{name} came through with a result of: #{result}"
+
+  i += 1
 
 end
 
