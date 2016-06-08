@@ -21,6 +21,10 @@ class Puppy
      puts "TugTugTug the #{rope}!"
   end
 
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
+
 end
 
 
