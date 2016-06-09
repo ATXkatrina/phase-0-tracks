@@ -28,7 +28,7 @@ class Puppy
 end
 
 
-
+# DRIVER CODE
 spot = Puppy.new
 
 spot.fetch("ball")
@@ -40,3 +40,34 @@ spot.roll_over
 spot.dog_years(10)
 
 spot.tug_of_war("chicken")
+
+
+class Cat
+  def initialize
+    puts "Intializing a new instance of Cat"
+  end
+
+  def meow
+    puts "Meow!"
+  end
+
+  def sit_for_pets(num_of_pets)
+    puts "Please pet me #{num_of_pets} times"
+    puts "Now I will bite you!"
+  end
+
+end
+
+# DRIVER CODE
+cats = []
+
+5.times do |cat|
+  cats << Cat.new
+end
+
+# p cats
+
+cats.each do |cat|
+  p cat.meow
+  p cat.sit_for_pets(2)
+end
