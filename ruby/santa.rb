@@ -1,5 +1,3 @@
-
-
 class Santa
   attr_reader :ethnicity
   attr_accessor :gender, :reindeer_ranking, :age
@@ -39,21 +37,50 @@ class Santa
 end
 
 santas = []
+
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |num|
-  santas << Santa.new(example_genders[num], example_ethnicities[num])
+
+# example_genders.length.times do |num|
+#   santas << Santa.new(example_genders[num], example_ethnicities[num])
+# end
+
+# make array for santa army
+# define a function for making santas, that accepts the num of santas as parameters
+# do <parameters> TIMES...
+# make new santas with the necessary given parameters
+# define parameters: find the random gender, ethnicity in the arrays
+# print result
+
+# p rand(example_genders.length)
+# p example_genders[rand(example_genders.length)]
+# p example_ethnicities[rand(example_ethnicities.length)]
+# p rand(example_ethnicities.length)
+# p @example_genders[rand(@example_genders.length)]
+
+# p Santa.new("female", "Canadian")
+
+
+
+def make_santas(num, gender_array, ethnicity_array)
+  num.times do |num|
+  p Santa.new(gender_array[rand(gender_array.length)], ethnicity_array[rand(ethnicity_array.length)])
+  end
 end
+make_santas(5, example_genders, example_ethnicities)
+
+
 
 # DRIVER CODE
 
 # p santas[0].celebrate_birthday
-wayne = Santa.new("gender fluid", "elvin")
-donald = Santa.new("non-binary", "troll")
+# wayne = Santa.new("gender fluid", "elvin")
+# donald = Santa.new("non-binary", "troll")
 # donald.celebrate_birthday
 # donald.get_mad_ad("Dasher")
 # p donald.reindeer_ranking
-p wayne.gender = "male"
+# p wayne.gender = "male"
 
 # sammy = Santa.new("male", "latino")
 # sammy.change_gender("unidentified")
@@ -71,4 +98,7 @@ p wayne.gender = "male"
 # santas << Santa.new("N/A", "N/A")
 
 
-
+# def make_a_santa(gender_array, ethnicity_array)
+#   p Santa.new(gender_array[rand(gender_array.length)], ethnicity_array[rand(ethnicity_array.length)])
+# end
+# make_a_santa(example_genders, example_ethnicities)
