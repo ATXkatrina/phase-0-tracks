@@ -7,9 +7,13 @@ class Santa
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
-    puts "This is a #{@ethnicity} #{@gender} Santa with an age of #{@age}."
+    @age = 0 #rand(140)
+    puts "This is a #{@ethnicity} #{@gender} Santa."
   end
+
+  # def change_age(new_age)
+  #   @age = new_age
+  # end
 
   def speak
     puts "Ho, ho, ho! Haaaapy holidays!"
@@ -36,7 +40,7 @@ class Santa
 
 end
 
-santas = []
+# santas = []
 
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 
@@ -53,6 +57,22 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 # define parameters: find the random gender, ethnicity in the arrays
 # print result
 
+# Santa.new("male", "latino").get_mad_ad("Prancer")
+
+def make_santas(num, gender_array, ethnicity_array)
+  num.times do |num|
+    # age = rand(140)
+   new_santa = Santa.new(gender_array[rand(gender_array.length)], ethnicity_array[rand(ethnicity_array.length)])
+    new_santa.age = rand(140)
+    p new_santa
+  end
+end
+make_santas(20, example_genders, example_ethnicities)
+
+
+# Santa.new(example_genders[rand(example_genders.length)], example_ethnicities[rand(example_ethnicities.length)]).change_age(29)
+
+
 # p rand(example_genders.length)
 # p example_genders[rand(example_genders.length)]
 # p example_ethnicities[rand(example_ethnicities.length)]
@@ -60,15 +80,6 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 # p @example_genders[rand(@example_genders.length)]
 
 # p Santa.new("female", "Canadian")
-
-
-
-def make_santas(num, gender_array, ethnicity_array)
-  num.times do |num|
-  p Santa.new(gender_array[rand(gender_array.length)], ethnicity_array[rand(ethnicity_array.length)])
-  end
-end
-make_santas(5, example_genders, example_ethnicities)
 
 
 
@@ -98,7 +109,3 @@ make_santas(5, example_genders, example_ethnicities)
 # santas << Santa.new("N/A", "N/A")
 
 
-# def make_a_santa(gender_array, ethnicity_array)
-#   p Santa.new(gender_array[rand(gender_array.length)], ethnicity_array[rand(ethnicity_array.length)])
-# end
-# make_a_santa(example_genders, example_ethnicities)
