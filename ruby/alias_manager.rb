@@ -1,3 +1,14 @@
+def make_alias (name)
+      # reverse order of first and last name
+      name = name.split(' ').reverse
+      # separate letters into array
+      name = name.join.split('')
+      # change each letter to next in alphabet
+      # //////EXPAND FOR VOWELS/CONSONANTS/////
+      name.map! {|letter| letter.next }
+      # join letter together
+      name = name.join('')
+end
 
 input = ''
 while input != "quit"
@@ -6,19 +17,16 @@ while input != "quit"
       break if input == "quit"
     p "What is the name we will be processing?"
     name = gets.chomp
-
-    def make_alias (name)
-      # reverse order of first and last name
-      name = name.split(' ').reverse
-      # separate letters into array
-      name = name.join.split('')
-      # change each letter to next in alphabet
-      name.map! {|letter| letter.next }
-      # join letter together
-      name = name.join('')
-    end
     p "Great. your new name is #{make_alias(name)}."
+end
+
+def change_vowels(name)
+  vowels = ["a", "e", "i", "o", "u"]
+
 
 end
 
+# all_names = []
+
+# all_names.push([name, name])
 

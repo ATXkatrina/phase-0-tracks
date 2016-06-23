@@ -11,10 +11,6 @@ class Santa
     puts "This is a #{@ethnicity} #{@gender} Santa."
   end
 
-  # def change_age(new_age)
-  #   @age = new_age
-  # end
-
   def speak
     puts "Ho, ho, ho! Haaaapy holidays!"
   end

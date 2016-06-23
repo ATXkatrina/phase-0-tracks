@@ -23,7 +23,7 @@ attr_accessor :character_with_ring, :utilized_power, :destined_for_Mount_Doom, :
   end
 
   def current_holder(given_character)
-    ring_bearers = ["Frodo", "Bilbo", "Samwise", "Gandalf", "Tom Bombadil"    , "Gollum"]
+    ring_bearers = ["Frodo", "Bilbo", "Samwise", "Gandalf", "Tom Bombadil", "Gollum"]
     if ring_bearers.include?(given_character)
       puts "The ring is in #{given_character}'s posession"
     else

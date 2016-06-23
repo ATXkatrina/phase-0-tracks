@@ -41,6 +41,19 @@ function equalKey(objectA, objectB){
 }
 
 
+function equalKey(objectA, objectB){
+  for (var i in objectA){
+    if (objectA[i] == objectB[i]){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+}
+
+
+
 // Release 2
 // name a function that takes an integer as an argument
   // name a variable that holds an empty array
@@ -81,4 +94,4 @@ var Tamir = {name: "Tamir", age: 54};
 console.log(equalKey(Steven, Tamir));
 
 // Release 2
-buildArray(9);
+// buildArray(9);
