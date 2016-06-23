@@ -4,7 +4,7 @@ puts "Good afternoon. How many applicants will be processed today?"
 i = 0
 while i < applicant_no
 
-    puts "Good afternoon. What is your name?"
+    puts "What is your name?"
       name = gets.chomp
 
     puts "Can you tell me your age?"
@@ -13,7 +13,7 @@ while i < applicant_no
     puts "And what year were you born in?"
       birth_year = gets.chomp.to_i
 
-      current_year = 20
+      current_year = 2016
       if birth_year == current_year - alleged_age
         age_checks_out = true
       else
@@ -50,10 +50,10 @@ while i < applicant_no
       result = "Run! It's a vampire!"
     elsif  !age_checks_out && !garlic_ok && !insurance
       result = "Almost certainly a vampire"
-    elsif name == "Lestat" || "Edward Cullen" || "Drake Cula" || "Dracula" || "Tu Fang"
+    elsif name == "Lestat" || "Edward Cullen" || "Drake Cula" || "Dracula" || "Tu Fang" || "Alucard"
       result = "Definitely a vampire"
     else
-      result = "Results inconclusive"
+      result = "Hmmm.."
     end
 
     puts "Applicant no.#{i}, #{name} came through with a result of: #{result}"

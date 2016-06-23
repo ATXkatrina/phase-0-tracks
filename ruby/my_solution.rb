@@ -4,26 +4,30 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
+# it references a ruby file with data that will be used in this file
 #
-#
+
 require_relative 'state_data'
 
 class VirusPredictor
 
+# initialize program with incoming data
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# run both methods for output
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths  # (@population_density, @population, @state)
+    speed_of_spread # (@population_density, @state)
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+# begin statement with reference to state and integer output based on IF/ELSE statement
+  def predicted_deaths(@population_density, @population, @state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +45,8 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+# finish statement with speed of virus spreading
+  def speed_of_spread(@population_density, @state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -68,19 +73,41 @@ end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+ # this belongs outside of the class so that it can work access the methods in the class and the hash
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+ def check_50_states
+  STATE_DATA.each do |state, state_data_hash|
+    VirusPredictor.new(state, state_data_hash[:population_density], state_data_hash[:population]).virus_effects
+  end
+end
+check_50_states
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+# Code above as a WHILE loop
+# def check_50_states(hash)
+#   i=0
+#   while i < STATE_DATA.keys.length
+#     state = STATE_DATA.keys[i]
+#     VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population]).virus_effects
+#     i += 1
+#   end
+# end
+# check_50_states(STATE_DATA)
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+
+
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
+
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
+
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
+
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
 
 
 #=======================================================================
