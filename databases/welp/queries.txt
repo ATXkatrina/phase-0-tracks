@@ -1,0 +1,14 @@
+sqlite> SELECT users.f_name, users.l_name, reviews.stars, reviews.comment, businesses.id FROM users, reviews, businesses;
+John|Wayne|4|Food was dope!|1
+John|Wayne|4|Food was dope!|2
+John|Wayne|2|There was no news.|1
+John|Wayne|2|There was no news.|2
+John|Wayne|5|There was no news, and I loved it!|1
+John|Wayne|5|There was no news, and I loved it!|2
+Marilyn|Monroe|4|Food was dope!|1
+Marilyn|Monroe|4|Food was dope!|2
+Marilyn|Monroe|2|There was no news.|1
+Marilyn|Monroe|2|There was no news.|2
+Marilyn|Monroe|5|There was no news, and I loved it!|1
+Marilyn|Monroe|5|There was no news, and I loved it!|2
+sqlite> 
