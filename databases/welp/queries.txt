@@ -11,4 +11,35 @@ Marilyn|Monroe|2|There was no news.|1
 Marilyn|Monroe|2|There was no news.|2
 Marilyn|Monroe|5|There was no news, and I loved it!|1
 Marilyn|Monroe|5|There was no news, and I loved it!|2
-sqlite> 
+sqlite>
+
+SELECT users.f_name, users.l_name, businesses.name, reviews.stars, reviews.comment FROM users, businesses, reviews;
+John|Wayne|Hungry Horse Restaurant|4|Food was dope!
+John|Wayne|Hungry Horse Restaurant|2|There was no news.
+John|Wayne|Hungry Horse Restaurant|5|There was no news, and I loved it!
+John|Wayne|Boerne Star Newspaper|4|Food was dope!
+John|Wayne|Boerne Star Newspaper|2|There was no news.
+John|Wayne|Boerne Star Newspaper|5|There was no news, and I loved it!
+Marilyn|Monroe|Hungry Horse Restaurant|4|Food was dope!
+Marilyn|Monroe|Hungry Horse Restaurant|2|There was no news.
+Marilyn|Monroe|Hungry Horse Restaurant|5|There was no news, and I loved it!
+Marilyn|Monroe|Boerne Star Newspaper|4|Food was dope!
+Marilyn|Monroe|Boerne Star Newspaper|2|There was no news.
+Marilyn|Monroe|Boerne Star Newspaper|5|There was no news, and I loved it!
+sqlite>
+
+
+sqlite> select * from users, businesses, reviews
+   ...> where businesses.name = "Hungry Horse Restaurant";
+1|John|Wayne|1|Hungry Horse Restaurant|1|4|Food was dope!|1|1
+1|John|Wayne|1|Hungry Horse Restaurant|2|2|There was no news.|2|2
+1|John|Wayne|1|Hungry Horse Restaurant|3|5|There was no news, and I loved it!|2|1
+2|Marilyn|Monroe|1|Hungry Horse Restaurant|1|4|Food was dope!|1|1
+2|Marilyn|Monroe|1|Hungry Horse Restaurant|2|2|There was no news.|2|2
+2|Marilyn|Monroe|1|Hungry Horse Restaurant|3|5|There was no news, and I loved it!|2|1
+sqlite>
+
+
+select * from reviews
+   ...> where reviews.business_id = 1;
+1|4|Food was dope!|1|1
