@@ -1,0 +1,97 @@
+8.3 queries
+
+Release 2: Execute SQL Queries
+1.Display the information in one table (either table is fine).
+
+sqlite> .tables
+employees    supervisors
+sqlite> SELECT * FROM employees;
+1|development|Janice|Makerage|2|TRUE
+2|web design|Sam|Middie|2|FALSE
+3|development|Anthony|Indigo|2|TRUE
+4|accounting|Jenny|Humboldt|1|FALSE
+5|human resources|Peggy|Sue|1|FALSE
+sqlite>
+
+2.Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE employees SET probationary="FALSE" WHERE f_name="Janice";
+sqlite> SELECT * FROM employees;
+1|development|Janice|Makerage|2|FALSE
+2|web design|Sam|Middie|2|FALSE
+3|development|Anthony|Indigo|2|TRUE
+4|accounting|Jenny|Humboldt|1|FALSE
+5|human resources|Peggy|Sue|1|FALSE
+sqlite> 
+
+3.Display the information in both tables using one query.
+
+sqlite> SELECT * FROM supervisors, employees WHERE employees.supervisor = supervisors.id;
+2|development|Amber|LeNice|1|development|Janice|Makerage|2|FALSE
+2|development|Amber|LeNice|2|web design|Sam|Middie|2|FALSE
+2|development|Amber|LeNice|3|development|Anthony|Indigo|2|TRUE
+1|operations|Patricia|LeBoss|4|accounting|Jenny|Humboldt|1|FALSE
+1|operations|Patricia|LeBoss|5|human resources|Peggy|Sue|1|FALSE
+sqlite> 
+
+4.Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT employees.f_name, employees.l_name, supervisors.l_name, employees.department FROM employees, supervisors WHERE employees.department=supervisors.department;
+Janice|Makerage|LeNice|development
+Anthony|Indigo|LeNice|development
+sqlite> 
+
+5.Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> SELECT * FROM employees;
+1|development|Janice|Makerage|2|FALSE
+2|web design|Sam|Middie|2|FALSE
+3|development|Anthony|Indigo|2|TRUE
+4|accounting|Jenny|Humboldt|1|FALSE
+5|human resources|Peggy|Sue|1|FALSE
+sqlite> DELETE FROM employees WHERE l_name = "Indigo";
+sqlite> SELECT * FROM employees;
+1|development|Janice|Makerage|2|FALSE
+2|web design|Sam|Middie|2|FALSE
+4|accounting|Jenny|Humboldt|1|FALSE
+5|human resources|Peggy|Sue|1|FALSE
+sqlite> 
+
+
+Release 3: Research on Your Own
+1.There are lots of different kinds of joins. What are they? Can you apply different conditions to a join to change what's displayed? Can you bookmark any good diagrams that will help you tell different joins apart in the future?
+
+	http://www.tutorialspoint.com/sqlite/sqlite_using_joins.htm
+
+	The CROSS JOIN
+		SELECT ... FROM table1 CROSS JOIN table2 ...
+
+	The INNER JOIN
+		SELECT ... FROM table1 [INNER] JOIN table2 ON conditional_expression ...
+
+	The OUTER JOIN
+		SELECT ... FROM table1 LEFT OUTER JOIN table2 ON conditional_expression ...
+
+
+2.Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+CROSS JOIN
+sqlite> SELECT employees.f_name, employees.l_name, employees.department FROM employees CROSS JOIN supervisors;
+Janice|Makerage|development
+Janice|Makerage|development
+Sam|Middie|web design
+Sam|Middie|web design
+Jenny|Humboldt|accounting
+Jenny|Humboldt|accounting
+Peggy|Sue|human resources
+Peggy|Sue|human resources
+sqlite>
+
+INNER JOIN
+
+sqlite> SELECT employees.f_name, employees.l_name, employees.department FROM employees INNER JOIN supervisors ON employees.department=supervisors.department;
+Janice|Makerage|development
+sqlite> 
+
+
+
