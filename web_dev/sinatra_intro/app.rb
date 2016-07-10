@@ -14,6 +14,7 @@ end
 
 # write a GET route with
 # route parameters
+
 get '/about/:person' do
   person = params[:person]
   "#{person} is a programmer, and #{person} is learning Sinatra."
@@ -43,4 +44,25 @@ end
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
+end
+
+# A contact route w/ an address
+get '/contact' do
+  'Find Dev Bootcamp in Austin at 1705 Guadalupe Street'
+end
+
+# A route that takes a name as a query parameter. If no name, return alternate greeting.
+get '/great_job/' do
+  name = params[:name]
+  if name
+    "Great job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+# Use route parameters to add two numbers
+get '/:num1/add/:num2' do
+  newnum = params[:num1].to_i + params[:num2].to_i
+  "The new number is #{newnum}!"
 end
